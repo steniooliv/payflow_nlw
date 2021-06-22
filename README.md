@@ -1,4 +1,6 @@
-<p align="center"><img src="https://github.com/steniooliv/payflow_nlw/blob/main/assets/images/cover_nlw.png" width=400 alt="Country Flags">
+<p align="center">
+  <img src="https://github.com/steniooliv/payflow_nlw/blob/main/assets/images/cover_nlw.png" width=400 alt="PayFlow">
+  <img src="https://github.com/steniooliv/payflow_nlw/blob/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width=100 alt="PayFlow Icon">
   <h1 align="center">PayFlow - Flutter APP<h1>
 </p>
 
