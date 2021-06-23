@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "948691562170",
+    "project_id": "payflow-steniooliv",
+    "storage_bucket": "payflow-steniooliv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948691562170:android:583822b78e113492265c83",
+        "android_client_info": {
+          "package_name": "com.example.payflow_nlw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948691562170-c81avrj09vjg1r6mesh4e772vnj0d3hq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.payflow_nlw",
+            "certificate_hash": "dbfd8f40555143aaff2743e56b4025695fb3fdfc"
+          }
+        },
+        {
+          "client_id": "948691562170-dr436sdo5knkuprcf34g7hjt967m4khi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKkwLMw7YoOQZa4XvhdBPvUX9gTjYBii8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "948691562170-dr436sdo5knkuprcf34g7hjt967m4khi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
