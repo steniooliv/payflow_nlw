@@ -83,7 +83,7 @@ class TextStyles {
   static final captionShape = GoogleFonts.lexendDeca(
     fontSize: 13,
     fontWeight: FontWeight.w400,
-    color: AppColors.shape,
+    color: AppColors.heading,
   );
   static final captionBody = GoogleFonts.lexendDeca(
     fontSize: 13,
