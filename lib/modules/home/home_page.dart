@@ -83,8 +83,10 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               width: size.width * 0.07,
             ),
-            GestureDetector(
-              onTap: () {},
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/barcode_scanner');
+              },
               child: Container(
                 width: size.width * 0.14,
                 height: size.height * 0.07,
