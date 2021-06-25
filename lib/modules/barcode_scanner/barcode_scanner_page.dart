@@ -4,8 +4,6 @@ import 'package:payflow_nlw/modules/barcode_scanner/barcode_scanner_status.dart'
 import 'package:payflow_nlw/shared/themes/app_colors.dart';
 import 'package:payflow_nlw/shared/themes/app_text_styles.dart';
 import 'package:payflow_nlw/shared/widgets/bottom_sheet/bottom_sheet_widget.dart';
-import 'package:payflow_nlw/shared/widgets/divider_vertical/divider_vertical_widget.dart';
-import 'package:payflow_nlw/shared/widgets/label_button/label_button.dart';
 import 'package:payflow_nlw/shared/widgets/set_label_buttons/set_label_buttons.dart';
 
 class BarcodeScannerPage extends StatefulWidget {
@@ -45,7 +43,7 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
             builder: (_, status, __) {
               if (status.showCamera) {
                 return Container(
-                  child: status.cameraController!.buildPreview(),
+                  child: controller.cameraController!.buildPreview(),
                 );
               } else {
                 return Container();
@@ -91,7 +89,9 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
                 primaryLabel: 'Adicionar da galeria',
                 primaryOnPressed: () {},
                 secondaryLabel: 'Inserir código do boleto',
-                secondaryOnPressed: () {},
+                secondaryOnPressed: () {
+                  Navigator.pushReplacementNamed(context, '/insert_boleto');
+                },
               ),
             ),
           ),
@@ -105,10 +105,12 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
                       'Tente escanear novamente ou digite o código do seu boleto.',
                   primaryLabel: 'Escanear novamente',
                   primaryOnPressed: () {
-                    controller.getAvailableCameras();
+                    controller.scanWithCamera();
                   },
                   secondaryLabel: 'Digitar código',
-                  secondaryOnPressed: () {},
+                  secondaryOnPressed: () {
+                    Navigator.pushReplacementNamed(context, '/insert_boleto');
+                  },
                 );
               } else {
                 return Container();
