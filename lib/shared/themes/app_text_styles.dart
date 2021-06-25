@@ -75,6 +75,11 @@ class TextStyles {
     fontWeight: FontWeight.w700,
     color: AppColors.background,
   );
+  static final inputs = GoogleFonts.inter(
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    color: AppColors.inputs,
+  );
   static final captionBackground = GoogleFonts.lexendDeca(
     fontSize: 13,
     fontWeight: FontWeight.w400,
