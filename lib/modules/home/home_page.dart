@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:payflow_nlw/modules/extract/extract_page.dart';
 import 'package:payflow_nlw/modules/home/home_controller.dart';
+import 'package:payflow_nlw/modules/meus_boletos/meus_boletos_page.dart';
+import 'package:payflow_nlw/shared/models/user_model.dart';
 import 'package:payflow_nlw/shared/themes/app_colors.dart';
 import 'package:payflow_nlw/shared/themes/app_text_styles.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final UserModel user;
+
+  const HomePage({Key? key, required this.user}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -13,11 +18,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final controller = HomeController();
   final pages = [
-    Container(
-      color: Colors.red,
+    MeusBoletosPage(
+      key: UniqueKey(),
     ),
-    Container(
-      color: Colors.blue,
+    ExtractPagePage(
+      key: UniqueKey(),
     ),
   ];
 
@@ -41,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyles.titleRegular,
                     children: [
                       TextSpan(
-                        text: 'Stenio',
+                        text: '${widget.user.name}',
                         style: TextStyles.titleBoldHeading,
                       ),
                     ],
@@ -55,16 +60,25 @@ class _HomePageState extends State<HomePage> {
                   width: size.width * 0.12,
                   height: size.height * 0.06,
                   decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(5),
+                      image: DecorationImage(
+                        image: NetworkImage(widget.user.photoURL!),
+                      )),
                 ),
               ),
             ),
           ),
         ),
       ),
-      body: pages[controller.currentPage],
+      body: [
+        MeusBoletosPage(
+          key: UniqueKey(),
+        ),
+        ExtractPagePage(
+          key: UniqueKey(),
+        ),
+      ][controller.currentPage],
       bottomNavigationBar: Container(
         height: size.height * 0.10,
         child: Row(
@@ -84,8 +98,9 @@ class _HomePageState extends State<HomePage> {
               width: size.width * 0.07,
             ),
             InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, '/barcode_scanner');
+              onTap: () async {
+                await Navigator.pushNamed(context, '/barcode_scanner');
+                setState(() {});
               },
               child: Container(
                 width: size.width * 0.14,
