@@ -39,7 +39,7 @@ class _MeusBoletosPageState extends State<MeusBoletosPage> {
                 builder: (_, boletos, __) => AnimatedCard(
                   direction: AnimatedCardDirection.bottom,
                   duration: Duration(milliseconds: 500),
-                  child: BoletoInfoWidget(),
+                  child: BoletoInfoWidget(size: boletos.length),
                 ),
               ),
             ),

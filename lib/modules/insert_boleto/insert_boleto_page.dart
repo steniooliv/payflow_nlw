@@ -9,10 +9,7 @@ import 'package:payflow_nlw/shared/widgets/set_label_buttons/set_label_buttons.d
 
 class InsertBoletoPage extends StatefulWidget {
   final String? barcode;
-  const InsertBoletoPage({
-    Key? key,
-    this.barcode,
-  }) : super(key: key);
+  const InsertBoletoPage({Key? key, this.barcode}) : super(key: key);
 
   @override
   _InsertBoletoPageState createState() => _InsertBoletoPageState();
@@ -21,9 +18,12 @@ class InsertBoletoPage extends StatefulWidget {
 class _InsertBoletoPageState extends State<InsertBoletoPage> {
   final controller = InsertBoletoController();
 
-  final moneyInputTextController =
-      MoneyMaskedTextController(leftSymbol: 'R\$', decimalSeparator: ',');
-  final dueDateInputTextController = MaskedTextController(mask: '00/00/0000');
+  final moneyInputTextController = MoneyMaskedTextController(
+    leftSymbol: "R\$",
+    decimalSeparator: ",",
+  );
+
+  final dueDateInputTextController = MaskedTextController(mask: "00/00/0000");
   final barcodeInputTextController = TextEditingController();
 
   @override
@@ -31,7 +31,6 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
     if (widget.barcode != null) {
       barcodeInputTextController.text = widget.barcode!;
     }
-
     super.initState();
   }
 
@@ -118,7 +117,7 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
         },
         secondaryLabel: "Cadastrar",
         secondaryOnPressed: () async {
-          await controller.cadastrar();
+          await controller.cadastrarBoleto();
           Navigator.pop(context);
         },
         enableSecondaryColor: true,
