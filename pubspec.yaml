@@ -32,6 +32,7 @@ dependencies:
   image_picker: ^0.8.0+4
   font_awesome_flutter: ^9.1.0
   flutter_masked_text2: ^0.9.1
+  animated_card: ^2.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
